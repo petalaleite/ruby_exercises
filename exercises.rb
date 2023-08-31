@@ -132,3 +132,13 @@ end
 
 p sum_of_strings_lengths('clark', 'bruce', 'jean', 'ororo')
 
+def longest_word(string)
+  string_array = string.split
+  biggest_word = string_array[0]
+  string_array.each { |word| biggest_word = word if word.length >= biggest_word.length }
+  biggest_word
+end
+
+p longest_word('theres no dark side of the moon really matter of fact its all dark')
+
+
