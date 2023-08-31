@@ -112,3 +112,14 @@ def evens_and_odds(arr)
 end
 
 p evens_and_odds([1, 2, 3, 4, 5, 6, 7, 8, 9 , 10, 11, 12, 13, 14, 15, 16, 21, 31, 41, 43])
+
+def custom_max(arr)
+  max = arr[0]
+  return nil if arr.length == 0
+  arr.each { |i| max = i if i > max }
+  max
+end
+
+p custom_max([])
+p custom_max([1, 3, 5, 13, 21, 34, 92, 8, 10])
+p custom_max(['route', 'alligator', 'crocodile','lion', 'porcupine', 'zebra'])
