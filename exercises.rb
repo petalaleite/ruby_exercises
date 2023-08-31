@@ -123,3 +123,12 @@ end
 p custom_max([])
 p custom_max([1, 3, 5, 13, 21, 34, 92, 8, 10])
 p custom_max(['route', 'alligator', 'crocodile','lion', 'porcupine', 'zebra'])
+
+def sum_of_strings_lengths(*strings)
+  sum = 0
+  strings.each { |string| sum += string.length }
+  sum
+end
+
+p sum_of_strings_lengths('clark', 'bruce', 'jean', 'ororo')
+
