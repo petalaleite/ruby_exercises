@@ -141,4 +141,20 @@ end
 
 p longest_word('theres no dark side of the moon really matter of fact its all dark')
 
+def custom_join(array, delimiter)
+  result = ''
+  last_index = array.length - 1
+  array.each_with_index do |string, index|
+    if index != last_index
+      result << string << delimiter
+    else
+      result << string
+    end
+  end
+  result
+end
+
+p custom_join(['joel', 'ellie', 'tommy'], '!')
+
+
 
