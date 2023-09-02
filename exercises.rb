@@ -173,6 +173,21 @@ p custom_count('Hello World', 'l')
 p custom_count('Endure and Survive', 'e')
 p custom_count('Divide and Conquer', 'ai')
 
+def custom_index(string, search_term)
+  return nil if string.include?(search_term) == false
+  arr = string.split('')
+  current = 0
+  arr.each do |char|
+    if char == search_term[0]
+      return current
+    end
+    current += 1
+  end
+end
+
+p custom_index('You may say im a dreamer', 'd')
+p custom_index('You may say im a dreamer', 'z')
+p custom_index('You may say im a dreamer', 'me')
 
 
 
