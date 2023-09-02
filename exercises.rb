@@ -156,5 +156,24 @@ end
 
 p custom_join(['joel', 'ellie', 'tommy'], '!')
 
+def custom_count(string, char)
+  sum = 0
+  if char.length == 1
+    string.each_char { |character| sum += 1 if character == char }
+  else
+    char_array = char.split('')
+    string.each_char do |character|
+      char_array.each { |str| sum += 1 if character == str }
+    end
+  end
+  sum
+end
+
+p custom_count('Hello World', 'l')
+p custom_count('Endure and Survive', 'e')
+p custom_count('Divide and Conquer', 'ai')
+
+
+
 
 
