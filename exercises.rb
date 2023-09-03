@@ -189,6 +189,20 @@ p custom_index('You may say im a dreamer', 'd')
 p custom_index('You may say im a dreamer', 'z')
 p custom_index('You may say im a dreamer', 'me')
 
+def custom_delete(text, del_char)
+  new_string = ''
+  if del_char.length == 1
+    text.each_char { |char| new_string << char if char != del_char }
+  else
+    text.each_char { |string| new_string << string if del_char.include?(string) == false }
+  end
+  new_string
+end
+
+p custom_delete('daenerys targaryen', 'ae')
+p custom_delete('daenerys targaryen', 'e')
+
+
 
 
 
