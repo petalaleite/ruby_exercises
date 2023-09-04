@@ -202,6 +202,17 @@ end
 p custom_delete('daenerys targaryen', 'ae')
 p custom_delete('daenerys targaryen', 'e')
 
+def hash_from_arrays(arr1, arr2)
+  hash = {}
+  arr1.each_with_index do |key, index|
+    hash.store(key, arr2[index])
+  end
+  hash
+end
+
+p hash_from_arrays(['red', 'green', 'blue'], [1, 2, 3])
+
+
 
 
 
