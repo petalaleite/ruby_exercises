@@ -212,6 +212,22 @@ end
 
 p hash_from_arrays(['red', 'green', 'blue'], [1, 2, 3])
 
+def word_frequency(text)
+  hash = {}
+  sum = 1
+  text.split(' ').each do |string|
+    if hash.include?(string) == false
+      hash.store(string, sum)
+    else
+      hash[string] += 1
+    end
+  end
+  hash
+end
+
+p word_frequency('blue red blue green')
+p word_frequency('a land far far away')
+
 
 
 
