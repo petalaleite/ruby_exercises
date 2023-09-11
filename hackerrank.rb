@@ -41,3 +41,14 @@ def transcode(word)
   word.force_encoding('UTF-8')
 end
 
+def scoring(array)
+  array.each { |user| user.update_score }
+end
+
+loop do
+  coder.practice
+  break if coder.oh_one?
+end
+
+coder.practice until coder.oh_one?
+
