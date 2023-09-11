@@ -228,6 +228,22 @@ end
 p word_frequency('blue red blue green')
 p word_frequency('a land far far away')
 
+def custom_map(array)
+  new_array = []
+  i = 0
+  while i < array.length
+    element = yield(array[i])
+    new_array.push(element)
+    i +=1
+  end
+  new_array
+end
+
+p custom_map([1, 2, 3]) { |number| number * number }
+p custom_map('Zelda', 'Link') { |name| name.length }
+p custom_map([]) { |text| text.length }
+
+
 
 
 
