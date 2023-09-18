@@ -244,6 +244,39 @@ p custom_map('Zelda', 'Link') { |name| name.length }
 p custom_map([]) { |text| text.length }
 
 
+class Product
+  attr_reader :name, :price
+
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+
+  def name=(name)
+    if valid_name?(name)
+      @name = name
+    else
+      @name = 'TBD'
+    end
+  end
+
+  def price=(price)
+    @price = price if price > 0
+  end
+
+  private
+
+  def valid_name?(name)
+    name.length >= 3 && name.length <= 20
+  end
+end
+
+book = Product.new('1984', 9.99)
+p book.name
+
+book.name = 'OK'
+p book.name
+
 
 
 
