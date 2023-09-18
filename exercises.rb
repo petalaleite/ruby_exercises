@@ -278,6 +278,43 @@ book.name = 'OK'
 p book.name
 
 
+class SushiLunchOrder
+  @@total_pieces = 0
+
+  class << self
+    def salmon_special
+      new(6, 3, 3)
+    end
+
+    def family_combo
+      new(12, 12, 12)
+    end
+
+    def total_pieces
+      @@total_pieces
+    end
+  end
+
+  attr_reader :salmon, :tuna, :yellowtail
+
+  def initialize(salmon, tuna, yellowtail)
+    @salmon = salmon
+    @tuna = tuna
+    @yellowtail = yellowtail
+    @@total_pieces += salmon + tuna + yellowtail
+  end
+end
+
+order1 = SushiLunchOrder.salmon_special
+p order1.salmon
+p order1.tuna
+p order1.yellowtail
+p SushiLunchOrder.total_pieces
+
+order2 = SushiLunchOrder.family_combo
+p SushiLunchOrder.total_pieces
+
+
 
 
 
