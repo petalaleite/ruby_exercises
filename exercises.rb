@@ -314,6 +314,15 @@ p SushiLunchOrder.total_pieces
 order2 = SushiLunchOrder.family_combo
 p SushiLunchOrder.total_pieces
 
+def generate_unique_phone_numbers(file)
+  phones = Set.new
+  opened_file = File.open(file)
+  opened_file.each do |line|
+    splited_line = line.split(',')
+    phones.add(splited_line[1].delete_suffix("\n"))
+  end
+  phones
+end
 
 
 
