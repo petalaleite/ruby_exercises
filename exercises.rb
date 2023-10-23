@@ -324,7 +324,25 @@ def generate_unique_phone_numbers(file)
   phones
 end
 
+def first_and_last(nums)
+  "#{nums[0]}" + "#{nums[-1]}"
+end
 
+p first_and_last(['a', 'b', 'c'])
 
+def product_of_even_indices(arr)
+  even_array = []
+  array.each_with_index { |num, index| even_array << num if index.even? }
+  multiplication = 1
+  even_array.each { |num| multiplication *= num }
+  multiplication
+end
 
+p product_of_even_indices([1, 2, 3, 4, 5, 6])
+
+def first_letter_of_last_string(arr)
+  arr[-1][0]
+end
+
+p first_letter_of_last_string(['zebra', 'hyena', 'lion'])
 
