@@ -315,9 +315,7 @@ order2 = SushiLunchOrder.family_combo
 p SushiLunchOrder.total_pieces
 
 def generate_unique_phone_numbers(file)
-  phones = Set.new
-  opened_file = File.open(file)
-  opened_file.each do |line|
+  File.open(file).each do |line|
     splited_line = line.split(',')
     phones.add(splited_line[1].delete_suffix("\n"))
   end
@@ -352,4 +350,52 @@ def product_of_number_and_index(arr)
   sum
 end
 
-p product_of_number_and_index)[1, 2, 3]
+p product_of_number_and_index([1, 2, 3])
+
+def double_elements(arr)
+  doubled = []
+  arr.each { |number| doubled << number * 2 }
+  doubled
+end
+
+p double_elements([1, 2, 3, 4, 5])
+p double_elements([10, 20, 30])
+
+def extract_long_words(arr)
+  long_words = []
+  arr.each { |word| long_words << word if word.length > 7}
+  long_words
+end
+
+p extract_long_words(['spaghetti', 'penne', 'fettuccine', 'ziti'])
+p extract_long_words(['lasagna', 'ravioli', 'cannelloni', 'tagliatelle'])
+
+def pasta_and_sauces(first_array, second_array)
+  concatenated = []
+  first_array.each do |pasta|
+    second_array.each do |sauce|
+      concatenated << "#{pasta.capitalize} with #{sause.capitalize} sauce"
+    end
+  end
+  concatenated
+end
+
+pasta_and_sauces(['fettuccine', 'spaghetti', 'penne'], ['alfredo', 'bolognese', 'pesto'])
+
+
+require 'time'
+
+def add_thirty_days(array)
+  new_days = []
+  date_format = '%m**%d**%Y'
+  thirty_days = 60 * 60 * 24 * 30
+  array.each do |date|
+    striped_date = Time.strptime(date, date_format)
+    added_days = striped_date + (thirty_days)
+    to_add = added_days.strftime(date_format)
+    new_days.push(to_add)
+  end
+  new_days
+end
+
+p add_thirty_days(["05**28**2023", "09**12**1991", "02**08**2002"])
